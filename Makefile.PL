@@ -22,6 +22,7 @@ requires 'Data::OptList';
 requires 'Devel::GlobalDestruction';
 requires 'List::MoreUtils' => '0.12';
 requires 'MRO::Compat'  => '0.05';
+requires 'Package::DeprecationManager';
 requires 'Package::Stash';
 requires 'Scalar::Util' => '1.18';
 requires 'Sub::Name'    => '0.04';
