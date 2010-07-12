@@ -50,9 +50,6 @@ my %DeprecatedAt = (
     'Class::MOP::Method::Constructor::generate_constructor_method' => 0.93,
     'Class::MOP::Method::Constructor::generate_constructor_method_inline' =>
         0.93,
-
-    # features deprecated after 0.93
-    # ...
 );
 
 my %Registry;
