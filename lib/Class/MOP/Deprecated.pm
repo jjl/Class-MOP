@@ -342,7 +342,7 @@ __END__
 
 =head1 NAME 
 
-Class::MOP::Deprecated - List of deprecated methods
+Class::MOP::Deprecated - Manages deprecation warnings for Class::MOP
 
 =head1 DESCRIPTION
 
@@ -350,8 +350,8 @@ Class::MOP::Deprecated - List of deprecated methods
 
 =head1 FUNCTIONS
 
-This class provides methods that have been deprecated but remain for backward
-compatibility.
+This module manages deprecation warnings for features that have been
+deprecated in Class::MOP.
 
 If you specify C<< -api_version => $version >>, you can use deprecated features
 without warnings. Note that this special treatment is limited to the package
