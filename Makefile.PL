@@ -20,6 +20,7 @@ if ( -d '.git' || $ENV{MAINTAINER_MODE} ) {
 requires 'Carp';
 requires 'Data::OptList';
 requires 'Devel::GlobalDestruction';
+requires 'Devel::StackTrace';
 requires 'List::MoreUtils' => '0.12';
 requires 'MRO::Compat'  => '0.05';
 requires 'Package::DeprecationManager';
