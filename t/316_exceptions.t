@@ -5,7 +5,7 @@ use Test::More;
 
 {
     package Foo;
-    use exception;
+    use Class::MOP::Exception;
     
     sub new {
         bless {}, 'Foo';
@@ -13,14 +13,14 @@ use Test::More;
     
     sub except {
         shift;
-        exception->new(@_);
+        Class::MOP::Exception->new(@_);
     }
     
 }
 
 {
     package Bar;
-    use exception;
+    use Class::MOP::Exception;
     
     sub one {
         two(@_);
@@ -31,7 +31,7 @@ use Test::More;
     }
     
     sub three {
-        exception->new(@_);
+        Class::MOP::Exception->new(@_);
     }
 }
 
@@ -49,7 +49,7 @@ use Test::More;
 
 ################################################## BASIC TESTS ###################
 
-    isa_ok($_,'exception',"type check") for ($f1,$f2,$f3,$b1,$b2,$b3);
+    isa_ok($_,'Class::MOP::Exception',"type check") for ($f1,$f2,$f3,$b1,$b2,$b3);
     isa_ok($_->stacktrace, 'Devel::StackTrace',"stacktraces are stacktraces") for ($f1,$f2,$f3,$b1,$b2,$b3);
     ok(!ref $_->message,"messages are strings") for ($f1,$f2,$f3,$b1,$b2,$b3);
     is($_->message,'bar', "correct messages") for ($f1,$b1);

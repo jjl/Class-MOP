@@ -1,4 +1,4 @@
-package exception;
+package Class::MOP::Exception;
 
 use strict;
 use warnings;
@@ -52,3 +52,40 @@ sub new {
 
 1;
 __END__
+
+=head1 DESCRIPTION
+
+exception - Simple exception class with Stack Trace for Class::MOP
+
+=head1 SYNOPSIS
+
+ use exception;
+ sub foo { bar(@_) }
+ sub bar { baz(@_) }
+ sub baz { die(exception->new(message => "Invalid length")) unless @_ == 2}
+
+=head1 METHODS
+
+=head2 message
+
+Returns the exception message
+
+=head2 stacktrace
+
+Returns the Devel::StackTrace object the exception built
+
+=head2 to_string (also the auto-stringify method)
+
+Returns a Carp::confess-alike formatted stack trace / error string.
+
+=head1 CONSTRUCTOR ARGS
+
+=head2 message
+
+You may pass in the exception message, designed to be a simple explanation of what went wrong.
+
+=head1 AUTHOR
+
+James Laver L<lt>cpan at jameslaver dot comL<gt>
+
+=cut
